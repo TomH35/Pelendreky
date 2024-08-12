@@ -17,7 +17,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/inc': {
+      '/Backend': {
         target: 'http://localhost',
         changeOrigin: true,
       },
