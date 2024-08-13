@@ -8,6 +8,21 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path:'/admin-login',
+      name:'adminLogin',
+      component: () => import('../views/AdminLoginView.vue')
+    },
+    {
+      path:'/admin-registration',
+      name:'adminRegistration',
+      component: () => import('../views/AdminRegistrationView.vue')
+    },
+    {
+      path:'/admin-main-menu',
+      name:'adminMainMenu',
+      component: () => import('../views/AdminMainMenuView.vue')
     }
   ]
 })
