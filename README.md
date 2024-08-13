@@ -9,4 +9,7 @@ TO DO:
 - About us page
 - Donation page
 - navbar s možnosťou prekliknúť na jednotlivé kategórie článkov
-- page, kde sa zobrazia články zakliknutej kategórie  
+- page, kde sa zobrazia články zakliknutej kategórie
+- registrácia a login pre používateľov
+- subscription funkcionalita
+- ads funkcionalita
