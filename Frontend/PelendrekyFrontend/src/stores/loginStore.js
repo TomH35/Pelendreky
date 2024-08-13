@@ -1,56 +1,32 @@
-// loginStore.ts
 import { defineStore } from 'pinia';
-/*import * as jwtDecodeModule from 'jwt-decode';
-
-const jwtDecode = jwtDecodeModule as unknown as (token: string) => JwtPayload;*/
-
 
 export const useLoginStore = defineStore({
-  id: 'loginStore',
+  id: 'login',
   state: () => ({
-    userAuthorised: false,
-    jwt: '',
+    token: null,
   }),
-  actions: {
-    async loginAsGuest() {
-      try {
-        const response = await fetch('./inc/GuestAuthorization.php');
-        const data = await response.json();
-
-        const jwt = jwtDecode<jwt>(data.jwt);
-
-        if (jwt.Authorised) {
-          this.userAuthorised = jwt.Authorised;
-          this.jwt = data.jwt;
-          localStorage.setItem('jwt', data.jwt); // Save the JWT to local storage
-          const beehivesStore = useBeehivesStore();
-          await beehivesStore.fetchBeehives();
-          await beehivesStore.fetchBeehiveTable(); 
-          await beehivesStore.fetchDefaultGraphData();
-        } else {
-          console.error('Failed to decode JWT or JWT did not contain Authorised field');
-        }
-
-      } catch (error) {
-        console.error('Failed to login as guest:', error);
-      }
+  getters: {
+    getToken(state) {
+      return state.token;
     },
-    checkLoginStatus() {
-      const jwt = localStorage.getItem('jwt'); // Get the JWT from local storage
-    
-      if (jwt) {
-        const decodedJwt = jwtDecode<jwt>(jwt);
-    
-        if (decodedJwt.Authorised) {
-          this.userAuthorised = decodedJwt.Authorised;
-          this.jwt = jwt;
-        }
+    userAuthorised(state) {
+      return !!state.token; // Check if the token exists to determine if the user is authorized
+    },
+  },
+  actions: {
+    setToken(token) {
+      this.token = token;
+      localStorage.setItem('token', token);
+    },
+    clearToken() {
+      this.token = null;
+      localStorage.removeItem('token');
+    },
+    loadTokenFromLocalStorage() {
+      const token = localStorage.getItem('token');
+      if (token) {
+        this.token = token;
       }
-    },    
-    logout() {
-      localStorage.removeItem('jwt'); // Remove the JWT from local storage
-      this.userAuthorised = false;
-      this.jwt = '';
     },
   },
 });
