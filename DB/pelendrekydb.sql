@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hostiteľ: 127.0.0.1:3307
--- Čas generovania: Út 13.Aug 2024, 11:12
+-- Čas generovania: Út 13.Aug 2024, 14:57
 -- Verzia serveru: 10.4.32-MariaDB
 -- Verzia PHP: 8.2.12
 
@@ -105,8 +105,17 @@ CREATE TABLE `users` (
   `surname` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `user_is_admin` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_slovak_ci;
+
+--
+-- Sťahujem dáta pre tabuľku `users`
+--
+
+INSERT INTO `users` (`user_id`, `name`, `surname`, `password`, `email`, `created_at`, `user_is_admin`) VALUES
+(1, 'T', 'T', '$2y$10$AHLwFvQ8iaVKhluzk6AE4.KXTeewFD4utHNz83VIFj0yycfJq1FEW', 'email@gmail.com', '2024-08-13 11:43:15', 1),
+(2, 'T', 'T', '$2y$10$fKZvtq7V7Fs/e0I5UL2rKukDIM8w36LW1ZY/pDTM/4/Qh.zjFSVzK', 'email3@gmail.com', '2024-08-13 11:52:15', 1);
 
 --
 -- Kľúče pre exportované tabuľky
@@ -179,7 +188,7 @@ ALTER TABLE `subscriptions`
 -- AUTO_INCREMENT pre tabuľku `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Obmedzenie pre exportované tabuľky
