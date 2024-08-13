@@ -1,8 +1,8 @@
 # Pelendreky
 
 TO DO:
-- Návrh DB
-- Admin registrácia, admin login
+- Návrh DB - done
+- Admin registrácia, admin login - done
 - admin rozhranie
 - CRUD pre články, članky budú mať kategórie(politika, zábava, šport, noviny) 
 - Front page, zobrazenie určitého počtu najaktualnejších článkov z každej kategórie
