@@ -16,31 +16,32 @@ class Database {
     }
 
     public function connect() {
-        $this->conn = new mysqli($this->host, $this->user, $this->password, $this->database, $this->port);
-
-        if ($this->conn->connect_error) {
-            die("Connection failed: " . $this->conn->connect_error);
+        try {
+            $dsn = "mysql:host=$this->host;port=$this->port;dbname=$this->database;charset=utf8mb4";
+            $this->conn = new PDO($dsn, $this->user, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die("Connection failed: " . $e->getMessage());
         }
 
         return $this->conn;
     }
 
     public function close() {
-        $this->conn->close();
+        $this->conn = null; // Closing the connection
     }
 }
 
 function connect_to_database() {
-    $database = new Database('127.0.0.1', 3306,'root', '', 'pelendrekydb');
+    $database = new Database('127.0.0.1', 3307, 'root', '', 'pelendrekydb');
     $connection = $database->connect();
     
     return $connection;
 }
 
-
 function close_database_connection($connection) {
-    $connection->close();
+    $connection = null;
 }
-
 ?>
+
 
