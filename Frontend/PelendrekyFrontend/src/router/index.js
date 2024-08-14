@@ -23,6 +23,16 @@ const router = createRouter({
       path:'/admin-main-menu',
       name:'adminMainMenu',
       component: () => import('../views/AdminMainMenuView.vue')
+    },
+    {
+      path:'/admin-create-article',
+      name:'adminCreateArticle',
+      component: () => import('../views/AdminCreateArticleView.vue')
+    },
+    {
+      path:'/admin-delete-article',
+      name:'adminDeleteArticle',
+      component: () => import('../views/AdminDeleteArticleView.vue')
     }
   ]
 })

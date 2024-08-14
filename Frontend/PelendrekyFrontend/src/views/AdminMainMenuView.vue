@@ -9,11 +9,11 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">Pridať alebo upraviť článok</h5>
+          <h5 class="card-title">Vytvoriť článok</h5>
           <p class="card-text"></p>
-          
-              <span class="btn custom-button-color custom-button-margin">Pridavanie</span>
-         
+          <router-link :to="{ name: 'adminCreateArticle' }" class="nav-link">
+              <span class="btn custom-button-color custom-button-margin">Vytvoriť</span>
+          </router-link>
         </div>
       </div>
     </div>
@@ -29,9 +29,9 @@
           <div class="card-body">
             <h5 class="card-title">Zmazať článok</h5>
             <p class="card-text"></p>
-            
-              <span class="btn custom-button-color custom-button-margin">Mazanie</span>
-          
+            <router-link :to="{ name: 'adminDeleteArticle' }" class="nav-link">
+              <span class="btn custom-button-color custom-button-margin">Zmazať článok</span>
+            </router-link>
           </div>
         </div>
       </div>
@@ -44,7 +44,6 @@
   <div class="container d-flex justify-content-center mt-3 mb-5">
       <button @click="handleLogout" class="btn custom-button-color">Logout</button>
   </div>
-  
   </template>
   <script>
   import { useLoginStore } from '../stores/loginStore';
