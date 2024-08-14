@@ -6,9 +6,6 @@ export const useLoginStore = defineStore({
     token: null,
   }),
   getters: {
-    getToken(state) {
-      return state.token;
-    },
     userAuthorised(state) {
       return !!state.token; // Check if the token exists to determine if the user is authorized
     },
@@ -27,6 +24,9 @@ export const useLoginStore = defineStore({
       if (token) {
         this.token = token;
       }
+    },
+    getToken() {
+      return this.token;
     },
   },
 });

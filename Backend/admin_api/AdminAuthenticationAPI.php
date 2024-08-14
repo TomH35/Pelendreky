@@ -11,21 +11,41 @@ use Firebase\JWT\Key;
 use Firebase\JWT\ExpiredException;
 
 function authenticateAdmin() {
-    $secretKey = 'M07gGoLVPCMAPuFvV2PLgFBFYH3lPb0Ov22jlxxcliX3PkBYXnXfFmXm76y5twn7';
+    $secretKey = 'M07gGoLVPCMAPuFvV2PLgFBFYH3lPb0Ov22jlxxcliX3PkBYXnXfFmXm76y5twn7'; // Replace with your actual secret key
 
-    // Get the JWT from the Authorization header
-    $authHeader = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
+    // Get all headers
+    $headers = getallheaders();
+
+    // Check if the 'Authorization' header is set
+    if (isset($headers['Authorization'])) {
+        $authHeader = $headers['Authorization'];
+    } elseif (isset($headers['authorization'])) {
+        $authHeader = $headers['authorization'];
+    } else {
+        http_response_code(401);
+        echo json_encode(['message' => 'Unauthorized', 'error' => 'Authorization header not found']);
+        return;
+    }
+
+    // Extract the JWT from the Authorization header
     if (preg_match('/Bearer\s(\S+)/', $authHeader, $matches)) {
         $jwt = $matches[1];
     } else {
         http_response_code(401);
-        echo json_encode(['message' => 'Unauthorized']);
+        echo json_encode(['message' => 'Unauthorized', 'error' => 'Invalid Authorization header format']);
         return;
     }
 
     try {
         // Decode the JWT
         $decoded = JWT::decode($jwt, new Key($secretKey, 'HS256'));
+
+        // Check if the user is an admin
+        if (empty($decoded->data->user_is_admin) || !$decoded->data->user_is_admin) {
+            http_response_code(403); // Forbidden
+            echo json_encode(['message' => 'Forbidden: Admin access required']);
+            return;
+        }
 
         // Check if the token has expired
         if ($decoded->exp < time()) {
@@ -49,7 +69,7 @@ function authenticateAdmin() {
             return;
         }
 
-        // If the token is valid and not expired, return "Authorized"
+        // If the token is valid, not expired, and the user is an admin, return "Authorized"
         echo json_encode(['message' => 'Authorized']);
 
     } catch (ExpiredException $e) {
@@ -59,10 +79,12 @@ function authenticateAdmin() {
     } catch (Exception $e) {
         // If the token is invalid
         http_response_code(401);
-        echo json_encode(['message' => 'Unauthorized']);
+        echo json_encode(['message' => 'Unauthorized', 'error' => $e->getMessage()]);
     }
 }
 
 // Call the function to handle the request
 authenticateAdmin();
 ?>
+
+
