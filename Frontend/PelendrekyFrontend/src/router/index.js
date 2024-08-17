@@ -25,14 +25,14 @@ const router = createRouter({
       component: () => import('../views/AdminMainMenuView.vue')
     },
     {
-      path:'/admin-create-article',
-      name:'adminCreateArticle',
-      component: () => import('../views/AdminCreateArticleView.vue')
+      path:'/admin-article-manager',
+      name:'adminArticleManager',
+      component: () => import('../views/AdminArticleManagerView.vue')
     },
     {
-      path:'/admin-delete-article',
-      name:'adminDeleteArticle',
-      component: () => import('../views/AdminDeleteArticleView.vue')
+      path:'/admin-category-manager',
+      name:'adminCategoryManager',
+      component: () => import('../views/AdminCategoryManagerView.vue')
     }
   ]
 })

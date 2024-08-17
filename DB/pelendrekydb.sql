@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hostiteľ: 127.0.0.1:3307
--- Čas generovania: Út 13.Aug 2024, 14:57
+-- Čas generovania: So 17.Aug 2024, 17:03
 -- Verzia serveru: 10.4.32-MariaDB
 -- Verzia PHP: 8.2.12
 
@@ -73,6 +73,13 @@ CREATE TABLE `categories` (
   `category_slug` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_slovak_ci;
+
+--
+-- Sťahujem dáta pre tabuľku `categories`
+--
+
+INSERT INTO `categories` (`category_id`, `category_name`, `category_slug`, `created_at`) VALUES
+(5, 'Technológia', 'technologia', '2024-08-17 15:00:55');
 
 -- --------------------------------------------------------
 
@@ -176,7 +183,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT pre tabuľku `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pre tabuľku `subscriptions`
