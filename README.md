@@ -14,4 +14,5 @@ TO DO:
 - registrácia a login pre používateľov
 - subscription funkcionalita
 - ads funkcionalita
+- analytics funkcionalita pre admin rozhranie
 - editor rozhranie(prístup len ku článkom, možnosť vytvárať a editovať len vlastné ćlánky)
