@@ -19,5 +19,6 @@ app.use(router)
 
 const loginStore = useLoginStore();
 loginStore.loadTokenFromLocalStorage();
+loginStore.loadUserInfoFromLocalStorage();
 
 app.mount('#app')

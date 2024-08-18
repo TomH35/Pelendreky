@@ -65,8 +65,12 @@ function AdminLogin() {
 
         $jwt = JWT::encode($payload, $secretKey, 'HS256');
 
-        // Return the JWT
-        echo json_encode(['access_token' => $jwt]);
+        // Return the JWT and user data
+        echo json_encode([
+            'access_token' => $jwt,
+            'user_id' => $user['user_id'],
+            'user_is_admin' => $user['user_is_admin']
+        ]);
 
     } catch (PDOException $e) {
         http_response_code(500);
