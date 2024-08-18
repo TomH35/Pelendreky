@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hostiteľ: 127.0.0.1:3307
--- Čas generovania: So 17.Aug 2024, 17:03
+-- Čas generovania: Sun 18.Aug 2024, 11:38
 -- Verzia serveru: 10.4.32-MariaDB
 -- Verzia PHP: 8.2.12
 
@@ -60,6 +60,14 @@ CREATE TABLE `articles` (
   `image_url` varchar(255) DEFAULT NULL,
   `tags` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_slovak_ci;
+
+--
+-- Sťahujem dáta pre tabuľku `articles`
+--
+
+INSERT INTO `articles` (`article_id`, `article_title`, `article_slug`, `article_text`, `user_id`, `category_id`, `published_at`, `created_at`, `updated_at`, `status`, `image_url`, `tags`) VALUES
+(1, 'Article Title', 'article-title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec tincidunt massa. Etiam fringilla magna eget tellus mattis, mattis volutpat erat porttitor. In sed arcu sed nulla gravida faucibus non a tortor. In sodales interdum risus et luctus. Curabitur sollicitudin tincidunt lacinia. Nunc at tincidunt dui. Vivamus consequat velit eu vehicula tristique. Ut erat mi, blandit id urna et, consequat facilisis lorem. Fusce in justo eu dolor pretium convallis. Suspendisse mattis, metus eget hendrerit varius, nisi ligula rutrum tellus, ac condimentum nisl lectus ac nulla. Ut quis dui nec sapien aliquam dignissim a vitae orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. ', 1, 5, '2024-08-18 10:53:20', '2024-08-18 08:53:20', '2024-08-18 08:53:20', 'published', 'Backend/public/ArticleImages/66c1b68090bb3-3_SkupinaRozvrh.PNG', ''),
+(3, 'Second Article', 'second-article', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec tincidunt massa. Etiam fringilla magna eget tellus mattis, mattis volutpat erat porttitor. In sed arcu sed nulla gravida faucibus non a tortor. In sodales interdum risus et luctus. Curabitur sollicitudin tincidunt lacinia. Nunc at tincidunt dui. Vivamus consequat velit eu vehicula tristique. Ut erat mi, blandit id urna et, consequat facilisis lorem. Fusce in justo eu dolor pretium convallis. Suspendisse mattis, metus eget hendrerit varius, nisi ligula rutrum tellus, ac condimentum nisl lectus ac nulla. Ut quis dui nec sapien aliquam dignissim a vitae orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. ', 2, 5, '2024-08-18 11:11:40', '2024-08-18 09:11:40', '2024-08-18 09:11:40', 'published', './Backend/public/ArticleImages/66c1bacc3009e-4_SkupinaRozvrh.PNG', '');
 
 -- --------------------------------------------------------
 
@@ -177,7 +185,7 @@ ALTER TABLE `ads`
 -- AUTO_INCREMENT pre tabuľku `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pre tabuľku `categories`
