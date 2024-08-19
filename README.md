@@ -4,8 +4,8 @@ TO DO:
 - Návrh DB - done
 - Admin registrácia, admin login - done
 - CRUD pre kategórie - done
+- CRUD pre články, članky budú mať kategórie(politika, zábava, šport, noviny) - done
 - admin rozhranie
-- CRUD pre články, članky budú mať kategórie(politika, zábava, šport, noviny) 
 - Front page, zobrazenie určitého počtu najaktualnejších článkov z každej kategórie
 - About us page
 - Donation page
