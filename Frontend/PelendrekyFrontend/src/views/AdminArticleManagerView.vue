@@ -4,6 +4,9 @@
         <div class="row">
       <CreateArticleForm />
     </div>
+    <div class="row">
+      <ArticleList />
+    </div>
   </div>
    
     </main>
@@ -11,10 +14,12 @@
   
   <script>
   import CreateArticleForm from '../components/ArticleCreateForm.vue';
+  import ArticleList from '../components/ArticleList.vue';
 
   export default {
     components: {
       CreateArticleForm,
+      ArticleList
     }
   }
   
