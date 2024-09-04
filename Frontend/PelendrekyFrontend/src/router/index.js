@@ -37,6 +37,13 @@ const router = createRouter({
       name: 'adminCategoryManager',
       component: () => import('../views/AdminCategoryManagerView.vue'),
       meta: { requiresAdminAuth: true } // Require admin privileges
+    },
+     // New route for articles with category_slug and article_slug
+     {
+      path: '/:category_slug/:article_slug',
+      name: 'articleView',
+      component: () => import('../views/ArticleView.vue'),
+      props: true
     }
   ],
   scrollBehavior(to, from, savedPosition) {
