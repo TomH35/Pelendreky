@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hostiteľ: 127.0.0.1:3307
--- Čas generovania: Po 19.Aug 2024, 15:28
+-- Čas generovania: St 04.Sep 2024, 15:01
 -- Verzia serveru: 10.4.32-MariaDB
 -- Verzia PHP: 8.2.12
 
@@ -66,7 +66,9 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`article_id`, `article_title`, `article_slug`, `article_text`, `user_id`, `category_id`, `published_at`, `created_at`, `updated_at`, `status`, `image_url`, `tags`) VALUES
-(7, 'Article Title', 'article-title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis maximus diam. Integer pulvinar ut enim et sagittis. Ut sagittis ac risus et posuere. Fusce pulvinar sodales magna, ut sollicitudin nibh finibus a. Aenean molestie lobortis ex, sed viverra lacus sodales ut. Duis vestibulum tellus vitae ultricies iaculis. In iaculis leo in lacus facilisis, quis sodales enim ullamcorper. Vivamus venenatis est vitae erat laoreet posuere. Vivamus consequat ante sed ipsum vestibulum dictum. Nunc dictum nulla accumsan tincidunt varius. Ut quis elit gravida, dictum diam non, malesuada enim. Aliquam erat volutpat. Maecenas auctor dignissim pellentesque. Nunc orci massa, vestibulum id risus eu, fermentum volutpat arcu. Quisque eu libero eros. Quisque efficitur lobortis ipsum, sit amet vehicula magna.', 1, 5, '2024-08-19 15:10:12', '2024-08-19 13:10:12', '2024-08-19 13:10:12', 'published', './Backend/public/ArticleImages/66c344345fe5f-3_SkupinaRozvrh.PNG', '');
+(7, 'Article Title', 'article-title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis maximus diam. Integer pulvinar ut enim et sagittis. Ut sagittis ac risus et posuere. Fusce pulvinar sodales magna, ut sollicitudin nibh finibus a. Aenean molestie lobortis ex, sed viverra lacus sodales ut. Duis vestibulum tellus vitae ultricies iaculis. In iaculis leo in lacus facilisis, quis sodales enim ullamcorper. Vivamus venenatis est vitae erat laoreet posuere. Vivamus consequat ante sed ipsum vestibulum dictum. Nunc dictum nulla accumsan tincidunt varius. Ut quis elit gravida, dictum diam non, malesuada enim. Aliquam erat volutpat. Maecenas auctor dignissim pellentesque. Nunc orci massa, vestibulum id risus eu, fermentum volutpat arcu. Quisque eu libero eros. Quisque efficitur lobortis ipsum, sit amet vehicula magna.', 1, 5, '2024-08-19 15:10:12', '2024-08-19 13:10:12', '2024-08-19 13:10:12', 'published', './Backend/public/ArticleImages/66c344345fe5f-3_SkupinaRozvrh.PNG', ''),
+(8, 'Second Article', 'second-article', 'text', 1, 6, '2024-09-04 13:58:25', '2024-09-04 11:58:25', '2024-09-04 11:58:25', 'published', './Backend/public/ArticleImages/66d84b611084f-3_SkupinaRozvrh.PNG', ''),
+(9, 'Another Article', 'another-article', 'text', 1, 5, '2024-09-04 14:47:33', '2024-09-04 12:47:33', '2024-09-04 12:47:33', 'published', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -86,7 +88,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`category_id`, `category_name`, `category_slug`, `created_at`) VALUES
-(5, 'Technológia', 'technologia', '2024-08-17 15:00:55');
+(5, 'Technológia', 'technologia', '2024-08-17 15:00:55'),
+(6, 'Politika', 'politika', '2024-09-04 11:57:49');
 
 -- --------------------------------------------------------
 
@@ -184,13 +187,13 @@ ALTER TABLE `ads`
 -- AUTO_INCREMENT pre tabuľku `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pre tabuľku `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pre tabuľku `subscriptions`
