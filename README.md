@@ -16,3 +16,4 @@ TO DO:
 - ads funkcionalita
 - analytics funkcionalita pre admin rozhranie
 - editor rozhranie(prístup len ku článkom, možnosť vytvárať a editovať len vlastné ćlánky)
+- Kategória, Prečo by ste sa mali odsťahovať zo Slovenska - članky o krajinách do ktorých sa odstahovať s porovnaním ku Slovensku
