@@ -6,10 +6,10 @@ TO DO:
 - CRUD pre kategórie - done
 - CRUD pre články, članky budú mať kategórie(politika, zábava, šport, noviny) - done
 - admin rozhranie
-- Front page, zobrazenie určitého počtu najaktualnejších článkov z každej kategórie
+- Front page, zobrazenie určitého počtu najaktualnejších článkov z každej kategórie - done
 - About us page
 - Donation page
-- navbar s možnosťou prekliknúť na jednotlivé kategórie článkov
+- dynamický navbar s možnosťou prekliknúť na jednotlivé kategórie článkov, nové kategórie sa zobrazia v navbare po vytvorení
 - page, kde sa zobrazia články zakliknutej kategórie
 - registrácia a login pre používateľov
 - subscription funkcionalita
