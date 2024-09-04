@@ -15,6 +15,7 @@ function fetchArticles() {
                 articles.category_id,
                 articles.tags,
                 articles.status,
+                articles.image_url,
                 categories.category_name
             FROM articles
             LEFT JOIN categories ON articles.category_id = categories.category_id
