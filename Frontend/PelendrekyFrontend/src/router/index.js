@@ -1,9 +1,9 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import { useLoginStore } from '../stores/loginStore';
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -38,8 +38,8 @@ const router = createRouter({
       component: () => import('../views/AdminCategoryManagerView.vue'),
       meta: { requiresAdminAuth: true } // Require admin privileges
     },
-     // New route for articles with category_slug and article_slug
-     {
+    // New route for articles with category_slug and article_slug
+    {
       path: '/:category_slug/:article_slug',
       name: 'articleView',
       component: () => import('../views/ArticleView.vue'),
@@ -47,7 +47,7 @@ const router = createRouter({
     }
   ],
   scrollBehavior(to, from, savedPosition) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         resolve({ left: 0, top: 0 });
       }, 10);
@@ -55,27 +55,32 @@ const router = createRouter({
   }
 });
 
-// Global navigation guard
 router.beforeEach((to, from, next) => {
   const loginStore = useLoginStore();
 
+  console.log('Navigating to:', to.name); // Check which route you're navigating to
+  console.log('Token:', loginStore.token);
+  console.log('User is Admin:', loginStore.user_is_admin);
+
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    // If the route requires authentication
     if (!loginStore.token) {
-      return next({ name: 'adminLogin' }); // Redirect to login if not authenticated
+      console.log('Redirecting to adminLogin because no token found.');
+      return next({ name: 'adminLogin' });
     }
   }
 
   if (to.matched.some(record => record.meta.requiresAdminAuth)) {
-    // If the route requires admin authentication
     if (!loginStore.token && !loginStore.user_is_admin) {
-      return next({ name: 'adminLogin' }); // Redirect to login if not authenticated or not an admin
+      console.log('Redirecting to adminLogin because user is not an admin.');
+      return next({ name: 'adminLogin' });
     }
   }
 
-  next(); // Proceed to the route if all checks pass
+  next(); // Allow navigation if checks pass
 });
 
+
 export default router;
+
 
 
