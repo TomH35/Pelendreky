@@ -44,6 +44,12 @@ const router = createRouter({
       name: 'articleView',
       component: () => import('../views/ArticleView.vue'),
       props: true
+    },
+    {
+      path: '/:category_slug', // Dynamic route for category_slug
+      name: 'articlesByCategory',
+      component: () => import('../views/ArticleByCategoryView.vue'),
+      props: true
     }
   ],
   scrollBehavior(to, from, savedPosition) {

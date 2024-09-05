@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hostiteľ: 127.0.0.1:3307
--- Čas generovania: Št 05.Sep 2024, 11:50
+-- Čas generovania: Št 05.Sep 2024, 14:05
 -- Verzia serveru: 10.4.32-MariaDB
 -- Verzia PHP: 8.2.12
 
@@ -66,7 +66,11 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`article_id`, `article_title`, `article_slug`, `article_text`, `user_id`, `category_id`, `published_at`, `created_at`, `updated_at`, `status`, `image_url`, `tags`) VALUES
-(14, 'New Article', 'new-article', 'text', 1, 5, '2024-09-05 11:27:05', '2024-09-05 09:27:05', '2024-09-05 09:27:42', 'published', '/Backend/public/ArticleImages/66d9796931622-3_SkupinaRozvrh.PNG', '');
+(14, 'New Article', 'new-article', 'text', 1, 5, '2024-09-05 11:27:05', '2024-09-05 09:27:05', '2024-09-05 09:27:42', 'published', '/Backend/public/ArticleImages/66d9796931622-3_SkupinaRozvrh.PNG', ''),
+(15, 'Another New Article', 'another-new-article', 'text', 1, 6, '2024-09-05 13:50:43', '2024-09-05 11:50:43', '2024-09-05 12:00:03', 'published', '/Backend/public/ArticleImages/66d99b13b614a-3_SkupinaRozvrh.PNG', ''),
+(16, 'Second Article', 'second-article', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales lectus odio, in sodales magna luctus at. Donec ac tincidunt lectus, eget ullamcorper urna. Quisque cursus bibendum tortor eget elementum. Vestibulum quis tempor ex, vitae finibus erat. Donec rutrum augue sit amet tellus sodales posuere. Maecenas suscipit nisl quam. Praesent eget erat auctor, ultricies justo vel, pulvinar diam. In aliquam elementum lectus non lobortis. Etiam semper diam sed volutpat feugiat. Cras justo nulla, fringilla a interdum a, porttitor facilisis mauris. ', 1, 5, '2024-09-05 14:02:32', '2024-09-05 12:02:32', '2024-09-05 12:02:32', 'published', '/Backend/public/ArticleImages/66d99dd866d9b-3_SkupinaRozvrh.PNG', ''),
+(17, 'Article Title', 'article-title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales lectus odio, in sodales magna luctus at. Donec ac tincidunt lectus, eget ullamcorper urna. Quisque cursus bibendum tortor eget elementum. Vestibulum quis tempor ex, vitae finibus erat. Donec rutrum augue sit amet tellus sodales posuere. Maecenas suscipit nisl quam. Praesent eget erat auctor, ultricies justo vel, pulvinar diam. In aliquam elementum lectus non lobortis. Etiam semper diam sed volutpat feugiat. Cras justo nulla, fringilla a interdum a, porttitor facilisis mauris. ', 1, 6, '2024-09-05 14:03:31', '2024-09-05 12:03:31', '2024-09-05 12:03:31', 'published', '/Backend/public/ArticleImages/66d99e135320b-3_SkupinaRozvrh.PNG', ''),
+(18, 'Another Title', 'another-title', 'text', 1, 5, '2024-09-05 14:04:31', '2024-09-05 12:04:31', '2024-09-05 12:04:31', 'published', '/Backend/public/ArticleImages/66d99e4f18058-3_SkupinaRozvrh.PNG', '');
 
 -- --------------------------------------------------------
 
@@ -185,7 +189,7 @@ ALTER TABLE `ads`
 -- AUTO_INCREMENT pre tabuľku `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pre tabuľku `categories`
