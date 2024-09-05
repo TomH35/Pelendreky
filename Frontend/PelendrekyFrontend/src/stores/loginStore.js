@@ -21,17 +21,15 @@ export const useLoginStore = defineStore({
       this.user_id = user_id;
       this.user_is_admin = user_is_admin;
       localStorage.setItem('user_id', user_id);
-      localStorage.setItem('user_is_admin', user_is_admin);
+      localStorage.setItem('user_is_admin', user_is_admin ? 'true' : 'false'); // Store as string
     },
     loadUserInfoFromLocalStorage() {
       const user_id = localStorage.getItem('user_id');
-      const user_is_admin = localStorage.getItem('user_is_admin') === 'true';
+      const user_is_admin = localStorage.getItem('user_is_admin') === 'true'; // Convert to boolean
       if (user_id) {
         this.user_id = user_id;
       }
-      if (user_is_admin !== null) {
-        this.user_is_admin = user_is_admin;
-      }
+      this.user_is_admin = user_is_admin; // Load user_is_admin as boolean
     },
     clearToken() {
       this.token = null;
