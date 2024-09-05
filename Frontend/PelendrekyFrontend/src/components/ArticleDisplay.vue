@@ -32,7 +32,7 @@
   
         this.loading = true;
         try {
-          const response = await fetch(`./Backend/article_api/ArticleReadBySlugAPI.php?category_slug=${category_slug}&article_slug=${article_slug}`);
+          const response = await fetch(`/Backend/article_api/ArticleReadBySlugAPI.php?category_slug=${category_slug}&article_slug=${article_slug}`);
           if (!response.ok) throw new Error('Failed to fetch article');
           const data = await response.json();
           this.article = data.article;

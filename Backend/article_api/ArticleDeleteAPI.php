@@ -32,7 +32,7 @@ function deleteArticle() {
         $imageUrl = $article['image_url'];
 
         // Replace './Backend' with '..' to correctly resolve the path
-        $filePath = str_replace('./Backend', '..', $imageUrl);
+        $filePath = str_replace('/Backend', '..', $imageUrl);
         $filePath = realpath($filePath);
         
         // Debugging output

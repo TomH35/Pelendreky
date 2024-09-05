@@ -24,7 +24,7 @@ function CreateArticle() {
         // Move the uploaded file to the target directory
         if (move_uploaded_file($imageFile['tmp_name'], $targetFilePath)) {
             // Store the relative path to the image in the database
-            $imageUrl = './Backend/public/ArticleImages/' . $imageFileName;
+            $imageUrl = '/Backend/public/ArticleImages/' . $imageFileName;
         } else {
             http_response_code(500);
             echo json_encode(['message' => 'Failed to upload image']);

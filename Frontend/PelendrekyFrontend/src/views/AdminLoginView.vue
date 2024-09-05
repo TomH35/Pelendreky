@@ -30,7 +30,7 @@ export default {
       this.errorMessage = '';
 
       try {
-        const response = await fetch('./Backend/admin_api/AdminLoginAPI.php', {
+        const response = await fetch('/Backend/admin_api/AdminLoginAPI.php', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

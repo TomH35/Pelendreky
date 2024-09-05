@@ -20,7 +20,7 @@ function updateArticle() {
         // Move the uploaded file to the target directory
         if (move_uploaded_file($imageFile['tmp_name'], $targetFilePath)) {
             // Store the relative path to the new image in the database
-            $newImageUrl = './Backend/public/ArticleImages/' . $imageFileName;
+            $newImageUrl = '/Backend/public/ArticleImages/' . $imageFileName;
         } else {
             http_response_code(500);
             echo json_encode(['message' => 'Failed to upload image']);
@@ -78,7 +78,7 @@ function updateArticle() {
         if ($stmt->execute()) {
             // If a new image was uploaded, delete the old one
             if ($oldImageUrl) {
-                $filePath = str_replace('./Backend', '..', $oldImageUrl);
+                $filePath = str_replace('/Backend', '..', $oldImageUrl);
                 $filePath = realpath($filePath);
                 
                 error_log('Attempting to delete file: ' . $filePath); // Debugging line
