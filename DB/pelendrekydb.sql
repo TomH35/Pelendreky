@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hostiteľ: 127.0.0.1:3307
--- Čas generovania: St 04.Sep 2024, 15:01
+-- Čas generovania: Št 05.Sep 2024, 11:50
 -- Verzia serveru: 10.4.32-MariaDB
 -- Verzia PHP: 8.2.12
 
@@ -66,9 +66,7 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`article_id`, `article_title`, `article_slug`, `article_text`, `user_id`, `category_id`, `published_at`, `created_at`, `updated_at`, `status`, `image_url`, `tags`) VALUES
-(7, 'Article Title', 'article-title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse lobortis maximus diam. Integer pulvinar ut enim et sagittis. Ut sagittis ac risus et posuere. Fusce pulvinar sodales magna, ut sollicitudin nibh finibus a. Aenean molestie lobortis ex, sed viverra lacus sodales ut. Duis vestibulum tellus vitae ultricies iaculis. In iaculis leo in lacus facilisis, quis sodales enim ullamcorper. Vivamus venenatis est vitae erat laoreet posuere. Vivamus consequat ante sed ipsum vestibulum dictum. Nunc dictum nulla accumsan tincidunt varius. Ut quis elit gravida, dictum diam non, malesuada enim. Aliquam erat volutpat. Maecenas auctor dignissim pellentesque. Nunc orci massa, vestibulum id risus eu, fermentum volutpat arcu. Quisque eu libero eros. Quisque efficitur lobortis ipsum, sit amet vehicula magna.', 1, 5, '2024-08-19 15:10:12', '2024-08-19 13:10:12', '2024-08-19 13:10:12', 'published', './Backend/public/ArticleImages/66c344345fe5f-3_SkupinaRozvrh.PNG', ''),
-(8, 'Second Article', 'second-article', 'text', 1, 6, '2024-09-04 13:58:25', '2024-09-04 11:58:25', '2024-09-04 11:58:25', 'published', './Backend/public/ArticleImages/66d84b611084f-3_SkupinaRozvrh.PNG', ''),
-(9, 'Another Article', 'another-article', 'text', 1, 5, '2024-09-04 14:47:33', '2024-09-04 12:47:33', '2024-09-04 12:47:33', 'published', NULL, '');
+(14, 'New Article', 'new-article', 'text', 1, 5, '2024-09-05 11:27:05', '2024-09-05 09:27:05', '2024-09-05 09:27:42', 'published', '/Backend/public/ArticleImages/66d9796931622-3_SkupinaRozvrh.PNG', '');
 
 -- --------------------------------------------------------
 
@@ -187,13 +185,13 @@ ALTER TABLE `ads`
 -- AUTO_INCREMENT pre tabuľku `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pre tabuľku `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pre tabuľku `subscriptions`
