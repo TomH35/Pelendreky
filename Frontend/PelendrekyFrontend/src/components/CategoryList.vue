@@ -115,7 +115,7 @@
     methods: {
       async fetchCategories() {
         try {
-          const response = await fetch('./Backend/category_api/CategoryReadAPI.php');
+          const response = await fetch('/Backend/category_api/CategoryReadAPI.php');
           const data = await response.json();
   
           if (!response.ok) {
@@ -136,7 +136,7 @@
       },
       async updateCategory() {
         try {
-          const response = await fetch('./Backend/category_api/CategoryUpdateAPI.php', {
+          const response = await fetch('/Backend/category_api/CategoryUpdateAPI.php', {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
@@ -167,7 +167,7 @@
         if (this.categoryIdToDelete === null) return;
   
         try {
-          const response = await fetch(`./Backend/category_api/CategoryDeleteAPI.php`, {
+          const response = await fetch(`/Backend/category_api/CategoryDeleteAPI.php`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json'
