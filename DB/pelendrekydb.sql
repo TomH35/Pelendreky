@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hostiteľ: 127.0.0.1:3307
--- Čas generovania: Št 05.Sep 2024, 14:05
+-- Čas generovania: Sun 08.Sep 2024, 15:37
 -- Verzia serveru: 10.4.32-MariaDB
 -- Verzia PHP: 8.2.12
 
@@ -70,7 +70,10 @@ INSERT INTO `articles` (`article_id`, `article_title`, `article_slug`, `article_
 (15, 'Another New Article', 'another-new-article', 'text', 1, 6, '2024-09-05 13:50:43', '2024-09-05 11:50:43', '2024-09-05 12:00:03', 'published', '/Backend/public/ArticleImages/66d99b13b614a-3_SkupinaRozvrh.PNG', ''),
 (16, 'Second Article', 'second-article', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales lectus odio, in sodales magna luctus at. Donec ac tincidunt lectus, eget ullamcorper urna. Quisque cursus bibendum tortor eget elementum. Vestibulum quis tempor ex, vitae finibus erat. Donec rutrum augue sit amet tellus sodales posuere. Maecenas suscipit nisl quam. Praesent eget erat auctor, ultricies justo vel, pulvinar diam. In aliquam elementum lectus non lobortis. Etiam semper diam sed volutpat feugiat. Cras justo nulla, fringilla a interdum a, porttitor facilisis mauris. ', 1, 5, '2024-09-05 14:02:32', '2024-09-05 12:02:32', '2024-09-05 12:02:32', 'published', '/Backend/public/ArticleImages/66d99dd866d9b-3_SkupinaRozvrh.PNG', ''),
 (17, 'Article Title', 'article-title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales lectus odio, in sodales magna luctus at. Donec ac tincidunt lectus, eget ullamcorper urna. Quisque cursus bibendum tortor eget elementum. Vestibulum quis tempor ex, vitae finibus erat. Donec rutrum augue sit amet tellus sodales posuere. Maecenas suscipit nisl quam. Praesent eget erat auctor, ultricies justo vel, pulvinar diam. In aliquam elementum lectus non lobortis. Etiam semper diam sed volutpat feugiat. Cras justo nulla, fringilla a interdum a, porttitor facilisis mauris. ', 1, 6, '2024-09-05 14:03:31', '2024-09-05 12:03:31', '2024-09-05 12:03:31', 'published', '/Backend/public/ArticleImages/66d99e135320b-3_SkupinaRozvrh.PNG', ''),
-(18, 'Another Title', 'another-title', 'text', 1, 5, '2024-09-05 14:04:31', '2024-09-05 12:04:31', '2024-09-05 12:04:31', 'published', '/Backend/public/ArticleImages/66d99e4f18058-3_SkupinaRozvrh.PNG', '');
+(18, 'Another Title', 'another-title', 'text', 1, 5, '2024-09-05 14:04:31', '2024-09-05 12:04:31', '2024-09-05 12:04:31', 'published', '/Backend/public/ArticleImages/66d99e4f18058-3_SkupinaRozvrh.PNG', ''),
+(19, 'Sport Article', 'sport-article', 'text', 1, 7, '2024-09-08 15:16:19', '2024-09-08 13:16:19', '2024-09-08 13:16:19', 'published', '/Backend/public/ArticleImages/66dda3a3c67c6-3_SkupinaRozvrh.PNG', ''),
+(20, 'Another Sport Article', 'another-sport-article', 'text', 1, 7, '2024-09-08 15:16:48', '2024-09-08 13:16:48', '2024-09-08 13:16:48', 'published', '/Backend/public/ArticleImages/66dda3c023712-3_SkupinaRozvrh.PNG', ''),
+(21, 'Zábava Article', 'zabava-article', 'text', 1, 14, '2024-09-08 15:23:01', '2024-09-08 13:23:01', '2024-09-08 13:23:01', 'published', '/Backend/public/ArticleImages/66dda5350e61c-3_SkupinaRozvrh.PNG', '');
 
 -- --------------------------------------------------------
 
@@ -91,7 +94,9 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`category_id`, `category_name`, `category_slug`, `created_at`) VALUES
 (5, 'Technológia', 'technologia', '2024-08-17 15:00:55'),
-(6, 'Politika', 'politika', '2024-09-04 11:57:49');
+(6, 'Politika', 'politika', '2024-09-04 11:57:49'),
+(7, 'Šport', 'sport', '2024-09-08 12:53:22'),
+(14, 'Zábava', 'zabava', '2024-09-08 13:22:34');
 
 -- --------------------------------------------------------
 
@@ -189,13 +194,13 @@ ALTER TABLE `ads`
 -- AUTO_INCREMENT pre tabuľku `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT pre tabuľku `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pre tabuľku `subscriptions`
