@@ -8,6 +8,9 @@ TO DO:
 - Front page, zobrazenie určitého počtu najaktualnejších článkov z každej kategórie - done
 - dynamický navbar s možnosťou prekliknúť na jednotlivé kategórie článkov, nové kategórie sa zobrazia v navbare po vytvorení - done
 - page, kde sa zobrazia články zakliknutej kategórie - done
+- komponent, ktorý zobrazuje najaktualnejší článok pre každú kategóriu, 3 karty s článkami, 1 karta pre reklamu a 1 karta ako panel - done
+- pridať počet zobrazení článku (pridať počet do db, nové API pre inkrementáciu počtu)
+- komponent, ktorý zobrazuje najpopulárnejšie články pre zakliknutú kategóriu
 - About us page
 - registrácia a login pre používateľov
 - ads funkcionalita
