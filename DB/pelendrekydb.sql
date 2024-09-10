@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hostiteľ: 127.0.0.1:3307
--- Čas generovania: Sun 08.Sep 2024, 15:37
+-- Čas generovania: Út 10.Sep 2024, 11:11
 -- Verzia serveru: 10.4.32-MariaDB
 -- Verzia PHP: 8.2.12
 
@@ -58,22 +58,23 @@ CREATE TABLE `articles` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `status` enum('draft','published','archived') DEFAULT 'draft',
   `image_url` varchar(255) DEFAULT NULL,
-  `tags` varchar(255) DEFAULT NULL
+  `tags` varchar(255) DEFAULT NULL,
+  `article_view_count` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_slovak_ci;
 
 --
 -- Sťahujem dáta pre tabuľku `articles`
 --
 
-INSERT INTO `articles` (`article_id`, `article_title`, `article_slug`, `article_text`, `user_id`, `category_id`, `published_at`, `created_at`, `updated_at`, `status`, `image_url`, `tags`) VALUES
-(14, 'New Article', 'new-article', 'text', 1, 5, '2024-09-05 11:27:05', '2024-09-05 09:27:05', '2024-09-05 09:27:42', 'published', '/Backend/public/ArticleImages/66d9796931622-3_SkupinaRozvrh.PNG', ''),
-(15, 'Another New Article', 'another-new-article', 'text', 1, 6, '2024-09-05 13:50:43', '2024-09-05 11:50:43', '2024-09-05 12:00:03', 'published', '/Backend/public/ArticleImages/66d99b13b614a-3_SkupinaRozvrh.PNG', ''),
-(16, 'Second Article', 'second-article', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales lectus odio, in sodales magna luctus at. Donec ac tincidunt lectus, eget ullamcorper urna. Quisque cursus bibendum tortor eget elementum. Vestibulum quis tempor ex, vitae finibus erat. Donec rutrum augue sit amet tellus sodales posuere. Maecenas suscipit nisl quam. Praesent eget erat auctor, ultricies justo vel, pulvinar diam. In aliquam elementum lectus non lobortis. Etiam semper diam sed volutpat feugiat. Cras justo nulla, fringilla a interdum a, porttitor facilisis mauris. ', 1, 5, '2024-09-05 14:02:32', '2024-09-05 12:02:32', '2024-09-05 12:02:32', 'published', '/Backend/public/ArticleImages/66d99dd866d9b-3_SkupinaRozvrh.PNG', ''),
-(17, 'Article Title', 'article-title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales lectus odio, in sodales magna luctus at. Donec ac tincidunt lectus, eget ullamcorper urna. Quisque cursus bibendum tortor eget elementum. Vestibulum quis tempor ex, vitae finibus erat. Donec rutrum augue sit amet tellus sodales posuere. Maecenas suscipit nisl quam. Praesent eget erat auctor, ultricies justo vel, pulvinar diam. In aliquam elementum lectus non lobortis. Etiam semper diam sed volutpat feugiat. Cras justo nulla, fringilla a interdum a, porttitor facilisis mauris. ', 1, 6, '2024-09-05 14:03:31', '2024-09-05 12:03:31', '2024-09-05 12:03:31', 'published', '/Backend/public/ArticleImages/66d99e135320b-3_SkupinaRozvrh.PNG', ''),
-(18, 'Another Title', 'another-title', 'text', 1, 5, '2024-09-05 14:04:31', '2024-09-05 12:04:31', '2024-09-05 12:04:31', 'published', '/Backend/public/ArticleImages/66d99e4f18058-3_SkupinaRozvrh.PNG', ''),
-(19, 'Sport Article', 'sport-article', 'text', 1, 7, '2024-09-08 15:16:19', '2024-09-08 13:16:19', '2024-09-08 13:16:19', 'published', '/Backend/public/ArticleImages/66dda3a3c67c6-3_SkupinaRozvrh.PNG', ''),
-(20, 'Another Sport Article', 'another-sport-article', 'text', 1, 7, '2024-09-08 15:16:48', '2024-09-08 13:16:48', '2024-09-08 13:16:48', 'published', '/Backend/public/ArticleImages/66dda3c023712-3_SkupinaRozvrh.PNG', ''),
-(21, 'Zábava Article', 'zabava-article', 'text', 1, 14, '2024-09-08 15:23:01', '2024-09-08 13:23:01', '2024-09-08 13:23:01', 'published', '/Backend/public/ArticleImages/66dda5350e61c-3_SkupinaRozvrh.PNG', '');
+INSERT INTO `articles` (`article_id`, `article_title`, `article_slug`, `article_text`, `user_id`, `category_id`, `published_at`, `created_at`, `updated_at`, `status`, `image_url`, `tags`, `article_view_count`) VALUES
+(14, 'New Article', 'new-article', 'text', 1, 5, '2024-09-05 11:27:05', '2024-09-05 09:27:05', '2024-09-10 09:07:12', 'published', '/Backend/public/ArticleImages/66d9796931622-3_SkupinaRozvrh.PNG', '', 1),
+(15, 'Another New Article', 'another-new-article', 'text', 1, 6, '2024-09-05 13:50:43', '2024-09-05 11:50:43', '2024-09-05 12:00:03', 'published', '/Backend/public/ArticleImages/66d99b13b614a-3_SkupinaRozvrh.PNG', '', 0),
+(16, 'Second Article', 'second-article', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales lectus odio, in sodales magna luctus at. Donec ac tincidunt lectus, eget ullamcorper urna. Quisque cursus bibendum tortor eget elementum. Vestibulum quis tempor ex, vitae finibus erat. Donec rutrum augue sit amet tellus sodales posuere. Maecenas suscipit nisl quam. Praesent eget erat auctor, ultricies justo vel, pulvinar diam. In aliquam elementum lectus non lobortis. Etiam semper diam sed volutpat feugiat. Cras justo nulla, fringilla a interdum a, porttitor facilisis mauris. ', 1, 5, '2024-09-05 14:02:32', '2024-09-05 12:02:32', '2024-09-05 12:02:32', 'published', '/Backend/public/ArticleImages/66d99dd866d9b-3_SkupinaRozvrh.PNG', '', 0),
+(17, 'Article Title', 'article-title', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sodales lectus odio, in sodales magna luctus at. Donec ac tincidunt lectus, eget ullamcorper urna. Quisque cursus bibendum tortor eget elementum. Vestibulum quis tempor ex, vitae finibus erat. Donec rutrum augue sit amet tellus sodales posuere. Maecenas suscipit nisl quam. Praesent eget erat auctor, ultricies justo vel, pulvinar diam. In aliquam elementum lectus non lobortis. Etiam semper diam sed volutpat feugiat. Cras justo nulla, fringilla a interdum a, porttitor facilisis mauris. ', 1, 6, '2024-09-05 14:03:31', '2024-09-05 12:03:31', '2024-09-05 12:03:31', 'published', '/Backend/public/ArticleImages/66d99e135320b-3_SkupinaRozvrh.PNG', '', 0),
+(18, 'Another Title', 'another-title', 'text', 1, 5, '2024-09-05 14:04:31', '2024-09-05 12:04:31', '2024-09-10 09:07:15', 'published', '/Backend/public/ArticleImages/66d99e4f18058-3_SkupinaRozvrh.PNG', '', 2),
+(19, 'Sport Article', 'sport-article', 'text', 1, 7, '2024-09-08 15:16:19', '2024-09-08 13:16:19', '2024-09-08 13:16:19', 'published', '/Backend/public/ArticleImages/66dda3a3c67c6-3_SkupinaRozvrh.PNG', '', 0),
+(20, 'Another Sport Article', 'another-sport-article', 'text', 1, 7, '2024-09-08 15:16:48', '2024-09-08 13:16:48', '2024-09-10 08:56:24', 'published', '/Backend/public/ArticleImages/66dda3c023712-3_SkupinaRozvrh.PNG', '', 1),
+(21, 'Zábava Article', 'zabava-article', 'text', 1, 14, '2024-09-08 15:23:01', '2024-09-08 13:23:01', '2024-09-10 09:08:23', 'published', '/Backend/public/ArticleImages/66dda5350e61c-3_SkupinaRozvrh.PNG', '', 1);
 
 -- --------------------------------------------------------
 
