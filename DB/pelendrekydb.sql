@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hostiteľ: 127.0.0.1:3307
--- Čas generovania: Út 10.Sep 2024, 11:11
+-- Čas generovania: Út 10.Sep 2024, 15:51
 -- Verzia serveru: 10.4.32-MariaDB
 -- Verzia PHP: 8.2.12
 
@@ -74,7 +74,8 @@ INSERT INTO `articles` (`article_id`, `article_title`, `article_slug`, `article_
 (18, 'Another Title', 'another-title', 'text', 1, 5, '2024-09-05 14:04:31', '2024-09-05 12:04:31', '2024-09-10 09:07:15', 'published', '/Backend/public/ArticleImages/66d99e4f18058-3_SkupinaRozvrh.PNG', '', 2),
 (19, 'Sport Article', 'sport-article', 'text', 1, 7, '2024-09-08 15:16:19', '2024-09-08 13:16:19', '2024-09-08 13:16:19', 'published', '/Backend/public/ArticleImages/66dda3a3c67c6-3_SkupinaRozvrh.PNG', '', 0),
 (20, 'Another Sport Article', 'another-sport-article', 'text', 1, 7, '2024-09-08 15:16:48', '2024-09-08 13:16:48', '2024-09-10 08:56:24', 'published', '/Backend/public/ArticleImages/66dda3c023712-3_SkupinaRozvrh.PNG', '', 1),
-(21, 'Zábava Article', 'zabava-article', 'text', 1, 14, '2024-09-08 15:23:01', '2024-09-08 13:23:01', '2024-09-10 09:08:23', 'published', '/Backend/public/ArticleImages/66dda5350e61c-3_SkupinaRozvrh.PNG', '', 1);
+(21, 'Zábava Article', 'zabava-article', 'text', 1, 14, '2024-09-08 15:23:01', '2024-09-08 13:23:01', '2024-09-10 09:08:23', 'published', '/Backend/public/ArticleImages/66dda5350e61c-3_SkupinaRozvrh.PNG', '', 1),
+(22, 'Article title one', 'article-title-one', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat dolor massa, a dignissim metus blandit nec. Vestibulum erat velit, pharetra vel convallis eu, tincidunt non libero. Suspendisse potenti. Curabitur ut diam sodales, sodales arcu eu, dictum nisi. In finibus ligula turpis, quis ullamcorper orci consectetur a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis erat diam, congue vel purus ac, pharetra rutrum tellus. Praesent pretium sed urna vel sagittis. In vestibulum, dolor non faucibus porttitor, nulla risus volutpat lorem, sit amet porttitor urna elit et ex. Vestibulum tristique sit amet nulla nec imperdiet. In at consequat felis. In hendrerit urna non neque vehicula, eu eleifend libero efficitur. In hac habitasse platea dictumst. </p><p><br></p><h2><strong>DJSOijdjsoajd</strong></h2><h2><br></h2><p>Cras vitae quam quis purus condimentum dictum. Vivamus feugiat, ligula feugiat efficitur rutrum, odio nunc eleifend felis, sit amet consectetur enim odio at ligula. Donec sollicitudin eleifend consectetur. Nulla mattis massa ac leo venenatis, porttitor fermentum lectus interdum. Curabitur lobortis libero at felis luctus elementum. Pellentesque interdum feugiat quam quis dignissim. Nunc eu urna arcu. Sed sit amet pharetra sem. Suspendisse fringilla, quam vitae sollicitudin laoreet, quam ligula ornare est, quis condimentum dui leo eget elit. Vestibulum vitae suscipit turpis. Nunc tempus nisl vel tortor efficitur, non imperdiet tellus ullamcorper. Pellentesque diam sem, consequat sit amet turpis in, hendrerit sagittis metus. Praesent ac commodo nulla, sed consectetur magna. Proin nec tortor nec nisi interdum condimentum et vel nulla. Aliquam imperdiet lectus in metus varius, sed porta orci porttitor. </p>', 1, 5, '2024-09-10 15:40:05', '2024-09-10 13:40:05', '2024-09-10 13:45:13', 'published', '/Backend/public/ArticleImages/66e04c35ace49-3_SkupinaRozvrh.PNG', '', 4);
 
 -- --------------------------------------------------------
 
@@ -195,7 +196,7 @@ ALTER TABLE `ads`
 -- AUTO_INCREMENT pre tabuľku `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT pre tabuľku `categories`
