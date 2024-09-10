@@ -14,7 +14,7 @@
             <img :src="article.image_url" class="card-img-top" alt="Article Image" />
             <div class="card-body">
               <h5 class="card-title">{{ article.article_title }}</h5>
-              <p class="card-text">{{ article.article_text.slice(0, 100) }}...</p>
+              <p class="card-text" v-html="article.article_text.slice(0, 100)"></p>
               <small class="text-muted">Views: {{ article.article_view_count }}</small>
             </div>
           </div>
